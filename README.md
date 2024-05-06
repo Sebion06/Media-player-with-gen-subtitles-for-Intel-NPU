@@ -12,8 +12,8 @@ The Whisper model is compiled using the [Intel® NPU Acceleration Library](https
 ## Prerequisites
 
 For the application to run properly, install the following prerequisites:
-    - the [VLC](https://www.videolan.org/) media player, as the python package is just an API
-    - the [FFmpeg](https://ffmpeg.org/) suite for proper handling of video and audio files.
+- the [VLC](https://www.videolan.org/) media player, as the python package is just an API
+- the [FFmpeg](https://ffmpeg.org/) suite for proper handling of video and audio files.
 
 ## Installation
 The video player runs on the [python3](https://www.python.org/downloads/) programming language. Testing was done on version 3.10.11.
