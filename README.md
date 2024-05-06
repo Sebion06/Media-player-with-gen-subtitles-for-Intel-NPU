@@ -31,7 +31,6 @@ python-vlc==3.0.20123
 Install:
 ```bash
 pip install -r /src/requirements.txt
-
 ```
 
 ## Usage
@@ -42,5 +41,28 @@ The app GUI can be started by running the `main.py` file:
 python src/main.py
 ```
 
-Usage example:
+#### Optional Arguments
+```bash
+options:
+  --model {tiny,base,small,medium,large}
+                        Whisper-AI model version
+  --in_lan {af,sq,am,ar,hy,az,eu,be,bn,bs,bg,ca,ceb,ny,zh-cn,zh-tw,co,hr,cs,da,nl,en...} , default=en
+                        Input lanuage of media file
+  --out_lan {af,sq,am,ar,hy,az,eu,be,bn,bs,bg,ca,ceb,ny,zh-cn,zh-tw,co,hr,cs,da,nl,en...}, default=en
+                        Output language for subtitles
+  --gen_sub_file True/False, default=False
+                        Generates a subtitle file
+```
+
+For the model version, keep in mind the various resources needed for running:
+Source:   [openai-whisper pip package](https://pypi.org/project/openai-whisper/)
+| Size   |	Parameters |   model  | Required VRAM | Relative speed |
+| ------ | ----------- | -------- | ------------- | -------------- |
+| tiny   |	39 M       |   tiny   |	~1 GB         |	~32x           |
+| base   |	74 M       |   base   |	~1 GB         |	~16x           |
+| small  | 	244 M      |   small  | ~2 GB         |	~6x            |
+| medium |	769 M      |   medium | ~5 GB         |	~2x            |
+| large  |	1550 M     |   large  | ~10 GB        | 1x             |
+
+#### Usage example
 ![alt text](./media/run_example.png)
