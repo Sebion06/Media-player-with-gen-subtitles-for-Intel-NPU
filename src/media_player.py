@@ -9,10 +9,10 @@ from PyQt6 import QtWidgets, QtGui, QtCore
 from PyQt6.QtWidgets import QSizePolicy
 from subtitles import SubtitleBox
 from translate import get_languages, start_live_translation
-from whisper_transcribe import start_live_transcription
+from whisper_transcription import start_live_transcription
 
 
-class Player(QtWidgets.QMainWindow):
+class Media_player(QtWidgets.QMainWindow):
     def __init__(self, settings):
         QtWidgets.QMainWindow.__init__(self)
         self.setWindowTitle("Media Player")
@@ -20,7 +20,7 @@ class Player(QtWidgets.QMainWindow):
         self.instance = vlc.Instance()
         self.media = None
         self.media_player = self.instance.media_player_new()
-        self.text_font = QtGui.QFont('Times', self.settings['font_size'])
+        self.text_font = QtGui.QFont('Times', 20)
         self.generate_sub_file = self.settings['generate_sub_file']
         self.create_ui()
         self.is_paused = False
@@ -152,12 +152,12 @@ class Player(QtWidgets.QMainWindow):
     def keyPressEvent(self, event):
         if event.key() == QtCore.Qt.Key.Key_BracketLeft:
             time_in_ms = self.media_duration * self.media_player.get_position()
-            new_time = time_in_ms - self.settings['time_change_ms']
+            new_time = time_in_ms - 1000
             self.set_new_audio_position(new_time_ms=new_time)
 
         elif event.key() == QtCore.Qt.Key.Key_BracketRight:
             time_in_ms = self.media_duration * self.media_player.get_position()
-            new_time = time_in_ms + self.settings['time_change_ms']
+            new_time = time_in_ms + 1000
             self.set_new_audio_position(new_time_ms=new_time)
 
     def set_new_audio_position(self, new_time_ms):

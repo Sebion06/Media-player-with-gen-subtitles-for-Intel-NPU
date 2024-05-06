@@ -1,5 +1,5 @@
 from PyQt6 import QtWidgets
-from whisper_transcribe import parse_whisper_time_string, times_to_ms
+from whisper_transcription import parse_whisper_time_string, times_to_ms
 
 
 def parse_srt_time_string(srt_time):
