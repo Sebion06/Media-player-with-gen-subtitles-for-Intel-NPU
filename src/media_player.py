@@ -254,6 +254,7 @@ class Media_player(QtWidgets.QMainWindow):
                                                      args=(self.subtitle_box.loaded_subtitles,
                                                            str(self.audio_file_path),
                                                            self.settings['model'],
+                                                           self.settings['in_lan'],
                                                            self.generate_sub_file))
         self.transcription_thread.start()
 

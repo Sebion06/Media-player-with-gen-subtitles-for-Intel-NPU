@@ -71,11 +71,11 @@ def generate_subtitle_file(segments, audio_path):
     f.close()
 
 
-def start_live_transcription(list_with_subtitle_text_and_times, audio_path, model, generate_sub_file=False):
-    model = whisper.load_model("tiny")
+def start_live_transcription(list_with_subtitle_text_and_times, audio_path, model_version, input_language, generate_sub_file=False):
+    model = whisper.load_model(model_version)
     model_compiled = intel_npu_acceleration_library.compile(
         model, dtype=torch.int8)
-    result = model_compiled.transcribe(audio_path, fp16=True, language="en")
+    result = model_compiled.transcribe(audio_path, fp16=True, language=input_language)
     segments = result["segments"]
 
     for segment in segments:
