@@ -1,6 +1,6 @@
 # Intel NPU - vlc player with generated subtitles by OpenAI-Whisper  
 
-A python vlc player that transcribes subtitles while watching a video. The model used to automatically generate the subtitles is the tiny version of [Whisper, by Open-AI](https://openai.com/index/whisper) for low memory impact, which doesn't have a translation capability, so the subtitle translations are done using the `google-trans` package . 
+A python vlc player that transcribes subtitles while watching a video. The model used to automatically generate the subtitles is [Whisper, by Open-AI](https://openai.com/index/whisper). The default model version is the `tiny` one, for low memory impact, which doesn't have a translation capability, so the subtitle translations are done using the `google-trans` package. 
 The Whisper model is compiled using the [Intel® NPU Acceleration Library](https://github.com/intel/intel-npu-acceleration-library), so that it ultimately runs on the Intel NPU, releaving the CPU or GPU of the processing for a low-powered and efficient inference.
 
 ## Content
